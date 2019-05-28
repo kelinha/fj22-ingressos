@@ -36,27 +36,27 @@ public class SessaoForm {
 	}
 
 
-	public void getsalaId(Integer salaId) {
+	public void setSalaId(Integer salaId) {
 		this.salaId = salaId;
 	}
 	
-	public LocalTime horario() {
+	public LocalTime getHorario() {
 		return horario;
 	}
 
-	public void horario(LocalTime horario) {
+	public void setHorario(LocalTime horario) {
 		this.horario = horario;
 	}
 	
-	public Integer filmeId() {
+	public Integer getFilmeId() {
 		return filmeId;
 	}
 
-	public void filmeId(Integer filmeId) {
+	public void setFilmeId(Integer filmeId) {
 		this.filmeId = filmeId;
 	}
 
-	public Integer getsalaId() {
+	public Integer getSalaId() {
 		return salaId;		
 
 	}
