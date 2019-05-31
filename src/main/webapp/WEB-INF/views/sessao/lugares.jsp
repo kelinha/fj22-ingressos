@@ -38,7 +38,7 @@
 								<tr>
 								<c:forEach var="lugar" items="${map.value}">
 									<td class="fileira-assento"><figure>
-										<svg class="assento disponivel" id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										<svg class="assento ${sessao.isDisponivel(lugar) && !carrinho.isSelecionado(lugar) ? 'disponivel' : 'ocupado'}" onclick ="${sessao.isDisponivel(lugar) && !carinho.isSelecionado(lugar) ? 'changeCheckbox(this)' : ''}"id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 viewBox="0 0 318.224 305.246" enable-background="new 0 0 318.224 305.246" xml:space="preserve">
 											<g id="FILL">
 												<path d="M269.395,132.246h-15.02V51.414c0-11.758-9.492-21.248-21.248-21.248H85.097
@@ -165,6 +165,7 @@
                     selectTipo.setAttribute('class', 'form-control input-sm');
 
                 <c:forEach items="${tiposDeIngressos}" var="tipo" varStatus="status">
+               
                     var option_${status.index} = document.createElement('option');
                     var text_${status.index} = document.createTextNode('${tipo.descricao}');
 

@@ -28,6 +28,9 @@ public class SessaoDao {
 				.setParameter("filme", filme)
 				.getResultList();
 	}
+	public Sessao findOne(Integer id) {
+		return manager.find(Sessao.class, id);
+	}
 }
 
 
